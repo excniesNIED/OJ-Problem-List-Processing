@@ -1,0 +1,83 @@
+{
+    "display_id": "old1044",
+    "title": "\u5386\u5c4a\u8bd5\u9898 \u516c\u5f0f\u6c42\u503c",
+    "description": {
+        "format": "html",
+        "value": "<br />\u3000\u3000\u8f93\u5165n, m, k\uff0c\u8f93\u51fa\u4e0b\u9762\u516c\u5f0f\u7684\u503c\u3002<br /> <img src=\"/RequireFile.do?fid=FJ9YqBGE\" width=\"317\" height=\"129\" /><br /> \u3000\u3000\u5176\u4e2dC_n^m\u662f\u7ec4\u5408\u6570\uff0c\u8868\u793a\u5728n\u4e2a\u4eba\u7684\u96c6\u5408\u4e2d\u9009\u51fam\u4e2a\u4eba\u7ec4\u6210\u4e00\u4e2a\u96c6\u5408\u7684\u65b9\u6848\u6570\u3002\u7ec4\u5408\u6570\u7684\u8ba1\u7b97\u516c\u5f0f\u5982\u4e0b\u3002<br /> <img src=\"/RequireFile.do?fid=TEm3EGfy\" width=\"1160\" height=\"112\" />"
+    },
+    "tags": [
+        "\u84dd\u6865\u676f-\u5386\u5c4a\u8bd5\u9898"
+    ],
+    "input_description": {
+        "format": "html",
+        "value": "\u8f93\u5165\u63cf\u8ff0:<br />\u3000\u3000\u8f93\u5165\u7684\u7b2c\u4e00\u884c\u5305\u542b\u4e00\u4e2a\u6574\u6570n\uff1b\u7b2c\u4e8c\u884c\u5305\u542b\u4e00\u4e2a\u6574\u6570m\uff0c\u7b2c\u4e09\u884c\u5305\u542b\u4e00\u4e2a\u6574\u6570k\u3002 <br />\u8f93\u5165\u6837\u4f8b: <br />3<br /> 1<br /> 3"
+    },
+    "output_description": {
+        "format": "html",
+        "value": "<br />\u8f93\u51fa\u63cf\u8ff0: <br />\u3000\u3000\u8ba1\u7b97\u4e0a\u9762\u516c\u5f0f\u7684\u503c\uff0c\u7531\u4e8e\u7b54\u6848\u975e\u5e38\u5927\uff0c\u8bf7\u8f93\u51fa\u8fd9\u4e2a\u503c\u9664\u4ee5999101\u7684\u4f59\u6570\u3002<br /> \u8f93\u51fa\u6837\u4f8b: <br />162"
+    },
+    "test_case_score": [
+        {
+            "score": 100,
+            "input_name": "1.in",
+            "output_name": "1.out"
+        },
+        {
+            "score": 100,
+            "input_name": "2.in",
+            "output_name": "2.out"
+        },
+        {
+            "score": 100,
+            "input_name": "3.in",
+            "output_name": "3.out"
+        },
+        {
+            "score": 100,
+            "input_name": "4.in",
+            "output_name": "4.out"
+        },
+        {
+            "score": 100,
+            "input_name": "5.in",
+            "output_name": "5.out"
+        },
+        {
+            "score": 100,
+            "input_name": "6.in",
+            "output_name": "6.out"
+        },
+        {
+            "score": 100,
+            "input_name": "7.in",
+            "output_name": "7.out"
+        },
+        {
+            "score": 100,
+            "input_name": "8.in",
+            "output_name": "8.out"
+        },
+        {
+            "score": 100,
+            "input_name": "9.in",
+            "output_name": "9.out"
+        }
+    ],
+    "hint": {
+        "format": "html",
+        "value": "HINT:\u65f6\u95f4\u9650\u5236\uff1a1.0s  \u5185\u5b58\u9650\u5236\uff1a256.0MB<br />\u3000\u3000\u5bf9\u4e8e10%\u7684\u6570\u636e\uff0cn\u226410\uff0ck\u22643\uff1b<br /> \u3000\u3000\u5bf9\u4e8e20%\u7684\u6570\u636e\uff0cn\u226420\uff0ck\u22643\uff1b<br /> \u3000\u3000\u5bf9\u4e8e30%\u7684\u6570\u636e\uff0cn\u22641000\uff0ck\u22645\uff1b<br /> \u3000\u3000\u5bf9\u4e8e40%\u7684\u6570\u636e\uff0cn\u226410^7\uff0ck\u226410\uff1b<br /> \u3000\u3000\u5bf9\u4e8e60%\u7684\u6570\u636e\uff0cn\u226410^15\uff0ck \u2264100\uff1b<br /> \u3000\u3000\u5bf9\u4e8e70%\u7684\u6570\u636e\uff0cn\u226410^100\uff0ck\u2264200\uff1b<br /> \u3000\u3000\u5bf9\u4e8e80%\u7684\u6570\u636e\uff0cn\u226410^500\uff0ck \u2264500\uff1b<br /> \u3000\u3000\u5bf9\u4e8e100%\u7684\u6570\u636e\uff0cn\u5728\u5341\u8fdb\u5236\u4e0b\u4e0d\u8d85\u8fc71000\u4f4d\uff0c\u53731\u2264n&lt;10^1000\uff0c1\u2264k\u22641000\uff0c\u540c\u65f60\u2264m\u2264n\uff0ck\u2264n\u3002"
+    },
+    "time_limit": 1000,
+    "memory_limit": 512,
+    "samples": [
+        {
+            "input": "\u53c2\u8003\u4e0a\u6587 ",
+            "output": "\u53c2\u8003\u4e0a\u6587"
+        }
+    ],
+    "template": {},
+    "spj": null,
+    "rule_type": "ACM",
+    "source": "\u84dd\u6865\u676f\u7ec3\u4e60\u7cfb\u7edf ID: 43 \u539f\u9898\u94fe\u63a5: http://lx.lanqiao.cn/problem.page?gpid=T43",
+    "answers": []
+}

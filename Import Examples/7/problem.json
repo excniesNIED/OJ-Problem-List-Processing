@@ -1,0 +1,63 @@
+{
+    "display_id": "old1043",
+    "title": "\u5386\u5c4a\u8bd5\u9898 \u4e5d\u5bab\u91cd\u6392",
+    "description": {
+        "format": "html",
+        "value": "<br />\u3000\u3000\u5982\u4e0b\u9762\u7b2c\u4e00\u4e2a\u56fe\u7684\u4e5d\u5bab\u683c\u4e2d\uff0c\u653e\u7740 1~8 \u7684\u6570\u5b57\u5361\u7247\uff0c\u8fd8\u6709\u4e00\u4e2a\u683c\u5b50\u7a7a\u7740\u3002\u4e0e\u7a7a\u683c\u5b50\u76f8\u90bb\u7684\u683c\u5b50\u4e2d\u7684\u5361\u7247\u53ef\u4ee5\u79fb\u52a8\u5230\u7a7a\u683c\u4e2d\u3002\u7ecf\u8fc7\u82e5\u5e72\u6b21\u79fb\u52a8\uff0c\u53ef\u4ee5\u5f62\u6210\u7b2c\u4e8c\u4e2a\u56fe\u6240\u793a\u7684\u5c40\u9762\u3002<br /> <img src=\"/RequireFile.do?fid=qYebaGed\" width=\"236\" height=\"245\" /><img src=\"/RequireFile.do?fid=HQ3JFM72\" width=\"236\" height=\"245\" /><br /> \u3000\u3000\u6211\u4eec\u628a\u7b2c\u4e00\u4e2a\u56fe\u7684\u5c40\u9762\u8bb0\u4e3a\uff1a12345678.<br /> \u3000\u3000\u628a\u7b2c\u4e8c\u4e2a\u56fe\u7684\u5c40\u9762\u8bb0\u4e3a\uff1a123.46758<br /> \u3000\u3000\u663e\u7136\u662f\u6309\u4ece\u4e0a\u5230\u4e0b\uff0c\u4ece\u5de6\u5230\u53f3\u7684\u987a\u5e8f\u8bb0\u5f55\u6570\u5b57\uff0c\u7a7a\u683c\u8bb0\u4e3a\u53e5\u70b9\u3002<br /> \u3000\u3000\u672c\u9898\u76ee\u7684\u4efb\u52a1\u662f\u5df2\u77e5\u4e5d\u5bab\u7684\u521d\u6001\u548c\u7ec8\u6001\uff0c\u6c42\u6700\u5c11\u7ecf\u8fc7\u591a\u5c11\u6b65\u7684\u79fb\u52a8\u53ef\u4ee5\u5230\u8fbe\u3002\u5982\u679c\u65e0\u8bba\u591a\u5c11\u6b65\u90fd\u65e0\u6cd5\u5230\u8fbe\uff0c\u5219\u8f93\u51fa-1\u3002"
+    },
+    "tags": [
+        "\u84dd\u6865\u676f-\u5386\u5c4a\u8bd5\u9898"
+    ],
+    "input_description": {
+        "format": "html",
+        "value": "\u8f93\u5165\u63cf\u8ff0:<br />\u3000\u3000\u8f93\u5165\u7b2c\u4e00\u884c\u5305\u542b\u4e5d\u5bab\u7684\u521d\u6001\uff0c\u7b2c\u4e8c\u884c\u5305\u542b\u4e5d\u5bab\u7684\u7ec8\u6001\u3002 <br />\u8f93\u5165\u6837\u4f8b: <br />12345678.<br /> 123.46758"
+    },
+    "output_description": {
+        "format": "html",
+        "value": "<br />\u8f93\u51fa\u63cf\u8ff0: <br />\u3000\u3000\u8f93\u51fa\u6700\u5c11\u7684\u6b65\u6570\uff0c\u5982\u679c\u4e0d\u5b58\u5728\u65b9\u6848\uff0c\u5219\u8f93\u51fa-1\u3002<br /> \u8f93\u51fa\u6837\u4f8b: <br />3"
+    },
+    "test_case_score": [
+        {
+            "score": 100,
+            "input_name": "1.in",
+            "output_name": "1.out"
+        },
+        {
+            "score": 100,
+            "input_name": "2.in",
+            "output_name": "2.out"
+        },
+        {
+            "score": 100,
+            "input_name": "3.in",
+            "output_name": "3.out"
+        },
+        {
+            "score": 100,
+            "input_name": "4.in",
+            "output_name": "4.out"
+        },
+        {
+            "score": 100,
+            "input_name": "5.in",
+            "output_name": "5.out"
+        }
+    ],
+    "hint": {
+        "format": "html",
+        "value": "HINT:\u65f6\u95f4\u9650\u5236\uff1a1.0s  \u5185\u5b58\u9650\u5236\uff1a256.0MB<br />"
+    },
+    "time_limit": 1000,
+    "memory_limit": 512,
+    "samples": [
+        {
+            "input": "\u53c2\u8003\u4e0a\u6587 ",
+            "output": "\u53c2\u8003\u4e0a\u6587"
+        }
+    ],
+    "template": {},
+    "spj": null,
+    "rule_type": "ACM",
+    "source": "\u84dd\u6865\u676f\u7ec3\u4e60\u7cfb\u7edf ID: 42 \u539f\u9898\u94fe\u63a5: http://lx.lanqiao.cn/problem.page?gpid=T42",
+    "answers": []
+}
