@@ -132,9 +132,9 @@ C:\User\excnies\Collections\1212\
  一本通在线评测 
 ````
 
-将`### 【题目描述】`下的内容`读入三个整数，按每个整数占8个字符的宽度，右对齐输出它们，按照格式要求依次输出三个整数，之间以一个空格分开。`转换为HTML填写到json文件的`description`下的`value`中：
+将`### 【题目描述】`下的内容`读入三个整数，按每个整数占8个字符的宽度，右对齐输出它们，按照格式要求依次输出三个整数，之间以一个空格分开。`转换为HTML格式，将文字以Unicode编码填写到json文件的`description`下的`value`中：
 ```html
-"<p><span style=\"color: rgb(64, 70, 79);\">\u8bfb\u5165\u4e09\u4e2a\u6574\u6570\uff0c\u6309\u6bcf\u4e2a\u6574\u6570\u53608\u4e2a\u5b57\u7b26\u7684\u5bbd\u5ea6\uff0c\u53f3\u5bf9\u9f50\u8f93\u51fa\u5b83\u4eec\uff0c\u6309\u7167\u683c\u5f0f\u8981\u6c42\u4f9d\u6b21\u8f93\u51fa\u4e09\u4e2a\u6574\u6570\uff0c\u4e4b\u95f4\u4ee5\u4e00\u4e2a\u7a7a\u683c\u5206\u5f00\u3002</span><br /></p>
+<p><span style=\"color: rgb(64, 70, 79);\">\u8bfb\u5165\u4e09\u4e2a\u6574\u6570\uff0c\u6309\u6bcf\u4e2a\u6574\u6570\u53608\u4e2a\u5b57\u7b26\u7684\u5bbd\u5ea6\uff0c\u53f3\u5bf9\u9f50\u8f93\u51fa\u5b83\u4eec\uff0c\u6309\u7167\u683c\u5f0f\u8981\u6c42\u4f9d\u6b21\u8f93\u51fa\u4e09\u4e2a\u6574\u6570\uff0c\u4e4b\u95f4\u4ee5\u4e00\u4e2a\u7a7a\u683c\u5206\u5f00\u3002</span><br /></p>
 ```
 
 `### 【输入】`下的内容对应`input_description`下的`value`，`### 【输出】`下的内容对应`output_description`下的`value`，`### 【提示】`对应`hint`下的`value`，都需要转换为HTML。如果个别选项没有数据，`value`留空。

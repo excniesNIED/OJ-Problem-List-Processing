@@ -15,6 +15,10 @@ def markdown_to_html(markdown):
     markdown = markdown.replace("```", "<pre>")
     return markdown
 
+def unicode_encode(text):
+    # 将文本转换为Unicode编码
+    return ''.join(['\\u{:04x}'.format(ord(char)) for char in text])
+
 def generate_problem_json(directory):
     problem_json = {
         "display_id": "",
@@ -68,10 +72,11 @@ def generate_problem_json(directory):
     sections = re.split(r"### \【(.*?)\】", content_md)
     sections = [markdown_to_html(section) for section in sections]
 
-    problem_json["description"]["value"] = sections[2]
-    problem_json["input_description"]["value"] = sections[4]
-    problem_json["output_description"]["value"] = sections[6]
-    problem_json["hint"]["value"] = sections[8]
+    # 将文本转换为Unicode编码
+    problem_json["description"]["value"] = f"<p><span style=\"color: rgb(64, 70, 79);\">{unicode_encode(sections[2])}</span><br /></p>"
+    problem_json["input_description"]["value"] = f"<p><span style=\"color: rgb(64, 70, 79);\">{unicode_encode(sections[4])}</span><br /></p>"
+    problem_json["output_description"]["value"] = f"<p><span style=\"color: rgb(64, 70, 79);\">{unicode_encode(sections[6])}</span><br /></p>"
+    problem_json["hint"]["value"] = f"<p><span style=\"color: rgb(64, 70, 79);\">{unicode_encode(sections[8])}</span><br /></p>"
 
     # 处理测试样例
     data_dir = os.path.join(directory, "data")
