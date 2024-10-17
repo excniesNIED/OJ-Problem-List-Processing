@@ -1,47 +1,74 @@
 import os
 import json
-import re
+import markdown
 
-def markdown_to_html(markdown):
-    # 简单的Markdown到HTML转换
-    markdown = markdown.replace("\n", "<br />")
-    markdown = markdown.replace("### 【题目描述】", "<h3>题目描述</h3>")
-    markdown = markdown.replace("### 【输入】", "<h3>输入</h3>")
-    markdown = markdown.replace("### 【输出】", "<h3>输出</h3>")
-    markdown = markdown.replace("### 【提示】", "<h3>提示</h3>")
-    markdown = markdown.replace("### 【来源】", "<h3>来源</h3>")
-    markdown = markdown.replace("### 【输入样例】", "<h3>输入样例</h3>")
-    markdown = markdown.replace("### 【输出样例】", "<h3>输出样例</h3>")
-    markdown = markdown.replace("```", "<pre>")
-    return markdown
-
-def unicode_encode(text):
-    # 将文本转换为Unicode编码
-    return ''.join(['\\u{:04x}'.format(ord(char)) for char in text])
+def markdown_to_html(md_content):
+    return markdown.markdown(md_content)
 
 def generate_problem_json(directory):
+    # 构建problem.json的路径
+    problem_json_path = os.path.join(directory, 'problem.json')
+
+    # 读取content.md文件
+    content_md_path = os.path.join(directory, 'content.md')
+    with open(content_md_path, 'r', encoding='utf-8') as f:
+        content_md = f.read()
+
+    # 解析content.md文件
+    sections = content_md.split('### ')
+    description = markdown_to_html(sections[1].split('【题目描述】')[1].strip())
+    input_description = markdown_to_html(sections[2].split('【输入】')[1].strip())
+    output_description = markdown_to_html(sections[3].split('【输出】')[1].strip())
+    hint = markdown_to_html(sections[4].split('【提示】')[1].strip())
+
+    # 获取子目录的数字
+    dir_number = os.path.basename(directory)
+
+    # 构建display_id和title
+    display_id = f"SSOI-{dir_number}"
+    title = f"SSOI-{dir_number}"
+
+    # 获取data目录下的所有.in和.out文件
+    data_dir = os.path.join(directory, 'data')
+    in_files = sorted([f for f in os.listdir(data_dir) if f.endswith('.in')])
+    out_files = sorted([f for f in os.listdir(data_dir) if f.endswith('.out')])
+
+    # 计算每组测试样例的分数
+    num_test_cases = len(in_files)
+    score_per_case = 100 // num_test_cases
+
+    # 构建test_case_score
+    test_case_score = []
+    for i in range(num_test_cases):
+        test_case_score.append({
+            "score": score_per_case,
+            "input_name": in_files[i],
+            "output_name": out_files[i]
+        })
+
+    # 构建problem.json的内容
     problem_json = {
-        "display_id": "",
-        "title": "",
+        "display_id": display_id,
+        "title": title,
         "description": {
             "format": "html",
-            "value": ""
+            "value": description
         },
         "tags": [
             "\u4e00\u672c\u901a"
         ],
         "input_description": {
             "format": "html",
-            "value": ""
+            "value": input_description
         },
         "output_description": {
             "format": "html",
-            "value": ""
+            "value": output_description
         },
-        "test_case_score": [],
+        "test_case_score": test_case_score,
         "hint": {
             "format": "html",
-            "value": ""
+            "value": hint
         },
         "time_limit": 1000,
         "memory_limit": 256,
@@ -58,50 +85,12 @@ def generate_problem_json(directory):
         "answers": []
     }
 
-    # 获取子目录的数字
-    dir_number = os.path.basename(directory)
-    problem_json["display_id"] = f"SSOI-{dir_number}"
-    problem_json["title"] = f"SSOI-{dir_number}"
-
-    # 读取content.md文件
-    content_md_path = os.path.join(directory, "content.md")
-    with open(content_md_path, 'r', encoding='utf-8') as f:
-        content_md = f.read()
-
-    # 解析content.md文件
-    sections = re.split(r"### \【(.*?)\】", content_md)
-    sections = [markdown_to_html(section) for section in sections]
-
-    # 将文本转换为Unicode编码
-    problem_json["description"]["value"] = f"<p><span style=\"color: rgb(64, 70, 79);\">{unicode_encode(sections[2])}</span><br /></p>"
-    problem_json["input_description"]["value"] = f"<p><span style=\"color: rgb(64, 70, 79);\">{unicode_encode(sections[4])}</span><br /></p>"
-    problem_json["output_description"]["value"] = f"<p><span style=\"color: rgb(64, 70, 79);\">{unicode_encode(sections[6])}</span><br /></p>"
-    problem_json["hint"]["value"] = f"<p><span style=\"color: rgb(64, 70, 79);\">{unicode_encode(sections[8])}</span><br /></p>"
-
-    # 处理测试样例
-    data_dir = os.path.join(directory, "data")
-    test_cases = os.listdir(data_dir)
-    in_files = sorted([f for f in test_cases if f.endswith(".in")])
-    out_files = sorted([f for f in test_cases if f.endswith(".out")])
-
-    if len(in_files) != len(out_files):
-        raise ValueError("Number of input files does not match number of output files")
-
-    score_per_case = 100 // len(in_files)
-    for i in range(len(in_files)):
-        problem_json["test_case_score"].append({
-            "score": score_per_case,
-            "input_name": in_files[i],
-            "output_name": out_files[i]
-        })
-
     # 写入problem.json文件
-    output_path = os.path.join(directory, "problem.json")
-    with open(output_path, 'w', encoding='utf-8') as f:
+    with open(problem_json_path, 'w', encoding='utf-8') as f:
         json.dump(problem_json, f, ensure_ascii=False, indent=4)
 
 def main():
-    collections_dir = "C:\\User\\excnies\\Collections"
+    collections_dir = 'C:\\User\\excnies\\Collections'
     for subdir in os.listdir(collections_dir):
         subdir_path = os.path.join(collections_dir, subdir)
         if os.path.isdir(subdir_path):
